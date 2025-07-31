@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopia Hotels - Book Your Perfect Stay</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>🇪🇹 Ethiopia Hotels</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/hotels">Hotels</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li id="authLinks">
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Ethiopia's Finest Hotels</h1>
+                <p>Experience the beauty and hospitality of Ethiopia with our carefully selected accommodations</p>
+                <div class="search-container">
+                    <select id="citySelect" class="search-input">
+                        <option value="">Select City</option>
+                        <option value="Addis Ababa">Addis Ababa</option>
+                        <option value="Bahir Dar">Bahir Dar</option>
+                        <option value="Hawassa">Hawassa</option>
+                        <option value="Gondar">Gondar</option>
+                        <option value="Mekelle">Mekelle</option>
+                    </select>
+                    <button id="searchBtn" class="search-btn">Search Hotels</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Ethiopia Hotels?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏨</div>
+                        <h3>Best Hotels</h3>
+                        <p>Carefully selected hotels across Ethiopia's major cities</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Best Prices</h3>
+                        <p>Competitive rates with transparent pricing in Ethiopian Birr</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure Booking</h3>
+                        <p>Safe and secure online reservation system</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Easy Management</h3>
+                        <p>Manage your bookings with our user-friendly interface</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-destinations">
+            <div class="container">
+                <h2>Popular Destinations</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card" onclick="searchByCity('Addis Ababa')">
+                        <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg" alt="Addis Ababa">
+                        <div class="destination-info">
+                            <h3>Addis Ababa</h3>
+                            <p>Capital city with modern amenities</p>
+                        </div>
+                    </div>
+                    <div class="destination-card" onclick="searchByCity('Bahir Dar')">
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Bahir Dar">
+                        <div class="destination-info">
+                            <h3>Bahir Dar</h3>
+                            <p>Beautiful lakeside city</p>
+                        </div>
+                    </div>
+                    <div class="destination-card" onclick="searchByCity('Hawassa')">
+                        <img src="https://images.pexels.com/photos/1697452/pexels-photo-1697452.jpeg" alt="Hawassa">
+                        <div class="destination-info">
+                            <h3>Hawassa</h3>
+                            <p>Scenic lake resort destination</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ethiopia Hotels</h3>
+                    <p>Your gateway to the best accommodations in Ethiopia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/hotels">Hotels</a></li>
+                        <li><a href="/my-bookings">My Bookings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@ethiopiahotels.com</p>
+                    <p>Phone: +251 11 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ethiopia Hotels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Ethiopia Hotels</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="/">🇪🇹 Ethiopia Hotels</a></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/hotels">Hotels</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/my-bookings" class="active">My Bookings</a></li>
+                    <li id="authLinks">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="bookings-main">
+        <div class="container">
+            <div class="bookings-header">
+                <h1>My Bookings</h1>
+            </div>
+
+            <div id="bookingsContainer" class="bookings-container">
+                <!-- Bookings will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/my-bookings.js"></script>
+</body>
+</html>

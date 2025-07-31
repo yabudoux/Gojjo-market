@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Ethiopia Hotels</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="/">🇪🇹 Ethiopia Hotels - Admin</a></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/hotels">Hotels</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-tabs">
+                    <button class="tab-btn active" onclick="showTab('hotels')">Hotels</button>
+                    <button class="tab-btn" onclick="showTab('bookings')">Bookings</button>
+                    <button class="tab-btn" onclick="showTab('users')">Users</button>
+                </div>
+            </div>
+
+            <!-- Hotels Tab -->
+            <div id="hotelsTab" class="tab-content active">
+                <div class="admin-section-header">
+                    <h2>Manage Hotels</h2>
+                    <button class="add-btn" onclick="showAddHotelForm()">Add New Hotel</button>
+                </div>
+                
+                <div id="addHotelForm" class="admin-form" style="display: none;">
+                    <h3>Add New Hotel</h3>
+                    <form id="hotelForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hotelName">Hotel Name</label>
+                                <input type="text" id="hotelName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelCity">City</label>
+                                <select id="hotelCity" name="city" required>
+                                    <option value="">Select City</option>
+                                    <option value="Addis Ababa">Addis Ababa</option>
+                                    <option value="Bahir Dar">Bahir Dar</option>
+                                    <option value="Hawassa">Hawassa</option>
+                                    <option value="Gondar">Gondar</option>
+                                    <option value="Mekelle">Mekelle</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelDescription">Description</label>
+                            <textarea id="hotelDescription" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelAmenities">Amenities (comma separated)</label>
+                            <input type="text" id="hotelAmenities" name="amenities" placeholder="WiFi, Pool, Restaurant, Spa">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hotelImage">Hotel Image</label>
+                                <div class="image-upload-container">
+                                    <div class="upload-options">
+                                        <div class="upload-option">
+                                            <input type="radio" id="uploadFile" name="imageOption" value="file" checked>
+                                            <label for="uploadFile">Upload Image File</label>
+                                        </div>
+                                        <div class="upload-option">
+                                            <input type="radio" id="uploadUrl" name="imageOption" value="url">
+                                            <label for="uploadUrl">Use Image URL</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="fileUploadSection" class="upload-section">
+                                        <input type="file" id="hotelImageFile" name="image_file" accept="image/*">
+                                        <div class="upload-info">
+                                            <small>Max size: 5MB | Formats: JPG, PNG, WebP | Recommended: 800x600px</small>
+                                        </div>
+                                        <div id="imagePreview" class="image-preview" style="display: none;">
+                                            <img id="previewImg" src="" alt="Preview">
+                                            <div class="image-info">
+                                                <span id="imageSize"></span>
+                                                <span id="imageDimensions"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="urlUploadSection" class="upload-section" style="display: none;">
+                                        <input type="url" id="hotelImageUrl" name="image_url" placeholder="https://example.com/image.jpg">
+                                        <div class="upload-info">
+                                            <small>Enter a valid image URL</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hotelRating">Rating</label>
+                                <select id="hotelRating" name="rating">
+                                    <option value="3.0">3.0</option>
+                                    <option value="3.5">3.5</option>
+                                    <option value="4.0" selected>4.0</option>
+                                    <option value="4.5">4.5</option>
+                                    <option value="5.0">5.0</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Save Hotel</button>
+                            <button type="button" class="cancel-btn" onclick="hideAddHotelForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="hotelsContainer" class="admin-table-container">
+                    <!-- Hotels table will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div id="bookingsTab" class="tab-content">
+                <div class="admin-section-header">
+                    <h2>All Bookings</h2>
+                </div>
+                <div id="bookingsContainer" class="admin-table-container">
+                    <!-- Bookings table will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="usersTab" class="tab-content">
+                <div class="admin-section-header">
+                    <h2>Manage Users</h2>
+                </div>
+                <div id="usersContainer" class="admin-table-container">
+                    <!-- Users table will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
